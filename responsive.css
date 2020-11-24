@@ -1,0 +1,124 @@
+/* Mobile & Table */
+@media (max-width: 1023px) {
+    :root {
+        --header-height: 68px;
+        --navbar-height: 0px;
+    }
+    .header {
+        height: 65px;
+        position: fixed;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        left: 0;
+    }
+    .hide-on-mobile-tablet {
+        display: none;
+    }
+    .app__container {
+        margin-top: calc(var(--header-height) + var(--header-sort-bar-height));
+    }
+    .header__sort-bar {
+        display: flex;
+        margin: -4px 0 0 0;
+    }
+    .app__content {
+        padding-top: 10px;
+    }
+    .mobile-category {
+        display: block;
+    }
+}
+/* Table */
+@media (min-width:740px) and (max-width: 1023px) {
+    .hide-on-tablet {
+        display: none;
+    }
+    .header__cart {
+        width: 70px;
+        text-align: right;
+    }
+    .header__cart-list {
+        position: fixed;
+        top: var(--header-height);
+        right: 0;
+        width: 100%;
+        padding: 0 calc((100% - 644px)/2);
+    }
+    .header__cart-list::after {
+        border-width: 32px 22px 0 22px;
+        left: 0;
+    }
+    .app__content {
+        margin-top: -4px;
+    }
+}
+/* Mobile */
+@media (max-width: 739px) {
+    .hide-on-mobile {
+        display: none;
+    }
+    .header-with-search {
+        padding: 0 12px;
+        margin: 0;
+        justify-content: space-between;
+    }
+    .header__logo {
+        width: unset;
+        margin-left: 5px;
+    }
+    .header__cart {
+        width: 51px;
+    }
+    .header__search-history {
+        position: fixed;
+        top: cacl(var(--header-height) + var(--header-sort-bar-height));
+        left: 0;
+        width: 100%;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.5)
+    }
+    .header__search {
+        top: calc(var(--header-height) + 6px) ;
+        left: 0;
+        position: fixed;
+        right: 0;
+        height: 46px;
+        box-shadow: 0 1px 2px rgba( 0, 0, 0, 0.05);
+        z-index: 1;
+        padding: 0 16px;
+        animation: mobitleSearchSideIn linear 0.25s;
+        display: none;
+    }
+    @keyframes mobitleSearchSideIn {
+        from {
+            opacity: 0;
+            top: calc((var(--header-height) + 6px)/2) ;
+        }
+        to {
+            opacity: 1;
+            top: calc(var(--header-height) + 6px) ;
+        }
+    }
+    .pagination-item {
+        margin: 0;
+    }
+    .pagination-item__link {
+        height: 28px;
+        font-size: 1.4rem;
+        min-width: 36px;
+    }
+    .app__content {
+        margin: -6px 4px;
+        padding: 4px 0;
+    }
+    .header__mobile-search{
+        display: block;
+    }
+    .header__logo-img {
+        width: 110px;
+        height: 50px;
+    }
+    .footer {
+        padding: 0 10px;
+    }
+}
